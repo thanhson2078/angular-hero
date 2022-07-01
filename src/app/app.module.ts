@@ -8,10 +8,19 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeroesComponent } from './heroes/heroes.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutComponent, PageNotFoundComponent],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    PageNotFoundComponent,
+    HeroesComponent,
+  ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
