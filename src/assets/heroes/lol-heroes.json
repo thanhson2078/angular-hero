@@ -1,0 +1,44 @@
+{
+  "characters": [
+    {
+      "img": "assets/img/Aatrox_0.jpg",
+      "name": "Aatrox"
+    },
+    {
+      "img": "assets/img/Ahri_0.jpg",
+      "name": "Ahri"
+    },
+    {
+      "img": "assets/img/Akali_0.jpg",
+      "name": "Akali"
+    },
+    {
+      "img": "assets/img/Akshan_0.jpg",
+      "name": "Akshan"
+    },
+    {
+      "img": "assets/img/Alistar_0.jpg",
+      "name": "Alistar"
+    },
+    {
+      "img": "assets/img/Amumu_0.jpg",
+      "name": "Amumu"
+    },
+    {
+      "img": "assets/img/Anivia_0.jpg",
+      "name": "Anivia"
+    },
+    {
+      "img": "assets/img/Annie_0.jpg",
+      "name": "Annie"
+    },
+    {
+      "img": "assets/img/Aphelios_0.jpg",
+      "name": "Aphelios"
+    },
+    {
+      "img": "assets/img/Ashe_0.jpg",
+      "name": "Ashe"
+    }
+  ]
+}

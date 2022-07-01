@@ -1,0 +1,6 @@
+<p>lol-heroes works!</p>
+
+<ul *ngFor="let character of charactersData" class="list-style">
+  <img [src]="character.img" />
+  <li>{{ character.name }}</li>
+</ul>

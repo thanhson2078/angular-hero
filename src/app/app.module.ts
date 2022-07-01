@@ -13,6 +13,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SkinDetailComponent } from './skin-detail/skin-detail.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { LolHeroesComponent } from './lol-heroes/lol-heroes.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
     HeroesComponent,
     SkinDetailComponent,
     HeroDetailComponent,
+    LolHeroesComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],
