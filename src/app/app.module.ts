@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HeroesComponent } from './heroes/heroes.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { SkinComponent } from './skin/skin.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     PageNotFoundComponent,
     HeroesComponent,
+    SkinComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],
