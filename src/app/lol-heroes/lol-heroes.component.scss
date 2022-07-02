@@ -5,5 +5,79 @@
   font-size: 2rem;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
-  color: rgb(255, 255, 0);
+
+  color: #ededed;
+}
+.search-heroes-wrapper {
+  padding-top: 25px;
+  background-image: radial-gradient(
+    circle,
+    #fce5b9,
+    #d1b296,
+    #a18475,
+    #705a55,
+    #403434,
+    #3d2f2f,
+    #392a2b,
+    #362526,
+    #5c3e39,
+    #815a4a,
+    #a47a59,
+    #c19e68
+  );
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #101215;
+  background: linear-gradient(#fce5b9, #c19e68);
+}
+.spacer {
+  font-size: 1.08818125rem;
+  margin-right: 50px;
+  cursor: pointer;
+}
+.heroes {
+  margin-right: 330px;
+}
+.hero {
+  color: #626262;
+  font-size: 1.02395rem;
+}
+.all-button {
+  color: #bb996b;
+  border-bottom: 3px solid #bb996b;
+}
+.input-and-glass {
+  display: flex;
+}
+.input-glass {
+  color: #bb996b;
+  font-size: 1.9rem;
+  position: absolute;
+  left: 65px;
+}
+.input-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #626262;
+  width: 150px;
+  padding: 10px 0 10px 45px;
+  margin: 0 0 0 21px;
+  background-color: #ddd;
+  outline: none;
+  border: none;
+  border-right: 1px solid #626262;
+}
+.input-box {
+  background: linear-gradient(135deg, transparent 15px, #ddd 0) top,
+    linear-gradient(-45deg, transparent 15px, #ddd 0) bottom;
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+
+  margin: 10px 71px 10px 40px;
+  padding: 10px 0 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

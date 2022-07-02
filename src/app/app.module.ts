@@ -9,7 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeroesComponent } from './heroes/heroes.component';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { SkinDetailComponent } from './skin-detail/skin-detail.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
@@ -26,7 +27,14 @@ import { LolHeroesComponent } from './lol-heroes/lol-heroes.component';
     HeroDetailComponent,
     LolHeroesComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatToolbarModule,
+    MatButtonModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
