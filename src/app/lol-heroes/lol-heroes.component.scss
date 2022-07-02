@@ -29,20 +29,25 @@
 .navbar {
   display: flex;
   justify-content: center;
-  background-color: #101215;
+  align-items: center;
   background: linear-gradient(#fce5b9, #c19e68);
 }
 .spacer {
+  background: none;
+  border: none;
   font-size: 1.08818125rem;
   margin-right: 50px;
   cursor: pointer;
 }
 .heroes {
-  margin-right: 330px;
+  margin-right: 250px;
 }
 .hero {
+  margin: 0 30px 0 0;
   color: #626262;
   font-size: 1.02395rem;
+  border: none;
+  background: none;
 }
 .all-button {
   color: #bb996b;
