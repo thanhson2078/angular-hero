@@ -1,3 +1,54 @@
+.list-wrapper-cut {
+  position: relative;
+}
+.list-wrapper-normal {
+  position: absolute;
+  left: 74.5px;
+  top: 124px;
+}
+
+.name {
+  position: relative;
+  left: 75px;
+  bottom: 80px;
+}
+
+.image-wrapper:hover {
+  overflow: visible;
+  opacity: 1;
+  transition: 0.7s ease;
+  animation: 2s delay-overflow;
+}
+
+@keyframes delay-overflow {
+  from {
+    overflow: hidden;
+  }
+}
+
+.image-wrapper {
+  opacity: 0.5;
+  width: 350px;
+  height: 500px;
+  transform: rotate(-225deg);
+  overflow: hidden;
+  margin: -100px 0 0 0;
+}
+.current-characters {
+  position: relative;
+  left: 50px;
+  width: 230px;
+  height: 280px;
+  margin: 100px 0 0 0;
+  transform: rotate(225deg);
+}
+
+.animation-characters {
+  margin: 100px 0 40px 0;
+  width: 230px;
+  height: 281px;
+}
+
 .list-style {
   display: inline-block;
   list-style: none;
@@ -5,8 +56,11 @@
   font-size: 2rem;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
-
+  padding: 0;
   color: #ededed;
+  margin-right: 130px;
+  width: 150px;
+  height: 0px;
 }
 .search-heroes-wrapper {
   padding-top: 25px;

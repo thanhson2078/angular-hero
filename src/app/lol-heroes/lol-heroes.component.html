@@ -31,11 +31,19 @@
       <button class="hero"><a>Pháp Sư</a></button>
     </div>
   </div>
-
-  <div>
+  <!-- <div class="list-wrapper-normal">
     <ul *ngFor="let character of charactersData" class="list-style">
-      <img [src]="character.img" />
-      <li>{{ character.name }}</li>
+      <li class="overlay">
+        <img [src]="character.img" class="animation-characters" />
+      </li>
+    </ul>
+  </div> -->
+  <div class="list-wrapper-cut">
+    <ul *ngFor="let character of charactersData" class="list-style">
+      <li class="image-wrapper">
+        <img [src]="character.img" class="current-characters" />
+      </li>
+      <li class="name">{{ character.name }}</li>
     </ul>
   </div>
 </div>
