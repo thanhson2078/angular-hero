@@ -20,30 +20,4 @@ describe('LolHeroesService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-
-  it('should return expected heroes (HttpClient called once)', (done: DoneFn) => {
-    const expectedHeroes = {
-      characters: [
-        {
-          img: 'assets/img/Aatrox_0.jpg',
-          name: 'Aatrox',
-        },
-        {
-          img: 'assets/img/Ahri_0.jpg',
-          name: 'Ahri',
-        },
-      ],
-    };
-
-    httpClientSpy.get.and.returnValue(of(expectedHeroes));
-
-    service.getLolHeroesData().subscribe({
-      next: (heroes) => {
-        expect(heroes).withContext('expected heroes').toEqual(expectedHeroes);
-        done();
-      },
-      error: done.fail,
-    });
-    expect(httpClientSpy.get.calls.count()).withContext('one call').toBe(1);
-  });
 });
