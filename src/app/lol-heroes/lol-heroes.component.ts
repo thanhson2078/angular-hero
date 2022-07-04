@@ -8,12 +8,10 @@ import { LolHeroesService } from '../services/lol-heroes/lol-heroes.service';
   styleUrls: ['./lol-heroes.component.scss'],
 })
 export class LolHeroesComponent implements OnInit {
-  
   charactersData: Array<LolHero> = [];
 
-  constructor(private lolheroesService: LolHeroesService) {
-  }
-  
+  constructor(private lolheroesService: LolHeroesService) {}
+
   ngOnInit(): void {
     this.getCharacters();
   }

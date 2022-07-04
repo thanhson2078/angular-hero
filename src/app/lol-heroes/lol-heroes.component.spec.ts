@@ -1,4 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
+
 import { LolHeroesService } from '../services/lol-heroes/lol-heroes.service';
 
 import { LolHeroesComponent } from './lol-heroes.component';
@@ -6,15 +11,14 @@ import { LolHeroesComponent } from './lol-heroes.component';
 describe('LolHeroesComponent', () => {
   let component: LolHeroesComponent;
   let fixture: ComponentFixture<LolHeroesComponent>;
+  let httpMock: HttpTestingController;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LolHeroesComponent ],
-      providers: [
-        LolHeroesService
-      ]
-    })
-    .compileComponents();
+      declarations: [LolHeroesComponent],
+      imports: [HttpClientTestingModule],
+      providers: [LolHeroesService],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(LolHeroesComponent);
     component = fixture.componentInstance;
