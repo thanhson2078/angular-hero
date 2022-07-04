@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LolHeroesService } from '../services/lol-heroes/lol-heroes.service';
 
 import { LolHeroesComponent } from './lol-heroes.component';
 
@@ -8,7 +9,10 @@ describe('LolHeroesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LolHeroesComponent ]
+      declarations: [ LolHeroesComponent ],
+      providers: [
+        LolHeroesService
+      ]
     })
     .compileComponents();
 
