@@ -9,6 +9,28 @@ import { LolHeroesService } from '../services/lol-heroes/lol-heroes.service';
 export class LolHeroesComponent implements OnInit {
   charactersData: Array<any> = [];
 
+  navBarData = [
+    'TIN TỨC',
+    'GIỚI THIỆU',
+    'ESPORTS',
+    'HỖ TRỢ',
+    'TẢI GAME',
+    'NẠP THẺ',
+  ];
+
+  breadCrumbData = [{ home: 'Trang Chủ', intro: 'Giới Thiệu', hero: 'Tướng' }];
+
+  heroesTypeData = [
+    'Xạ Thủ',
+    'Đấu Sĩ',
+    'Đỡ Đòn',
+    'Sát Thủ',
+    'Hỗ Trợ',
+    'Pháp Sư',
+  ];
+
+  allHeroesTypeData = [{ all: 'Tất Cả' }];
+
   constructor(private lolheroesService: LolHeroesService) {}
 
   ngOnInit(): void {

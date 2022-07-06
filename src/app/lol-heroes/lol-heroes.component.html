@@ -1,49 +1,63 @@
 <div class="navbar">
-  <img class="spacer" src="/assets/img/logo.png" alt="" />
-  <button class="spacer"><a>TIN TỨC</a></button>
-  <button class="spacer"><a>GIỚI THIỆU</a></button>
-  <button class="spacer"><a>ESPORTS</a></button>
-  <button class="spacer"><a>HỖ TRỢ</a></button>
-  <button class="spacer"><a>TẢI GAME</a></button>
-  <button class="spacer"><a>NẠP THẺ</a></button>
+  <div class="logo"></div>
+  <div class="nav-info-box" *ngFor="let navChild of navBarData">
+    <a class="nav-info">
+      {{ navChild }}
+    </a>
+  </div>
 </div>
 
-<div class="search-heroes-wrapper">
-  <div class="input-box">
-    <div class="input-and-glass">
-      <input
-        class="input-text"
-        type="text"
-        name="search"
-        autocomplete="off"
-        placeholder="Tìm Tướng"
-      />
-      <i class="fa-solid fa-magnifying-glass input-glass"></i>
-    </div>
+<div class="background-blur"></div>
 
-    <div class="heroes">
-      <button class="hero all-button"><a>Tất cả</a></button>
-      <button class="hero"><a>Xạ Thủ</a></button>
-      <button class="hero"><a>Đấu Sĩ</a></button>
-      <button class="hero"><a>Đỡ Đòn</a></button>
-      <button class="hero"><a>Sát Thủ</a></button>
-      <button class="hero"><a>Hỗ Trợ</a></button>
-      <button class="hero"><a>Pháp Sư</a></button>
+<div class="bg-small-border">
+  <div class="background-small">
+    <img src="/assets/img/background-small.jpg" alt="" />
+  </div>
+  <div class="border-line"></div>
+  <div class="bg-small-text">
+    <ul class="bread-crumb" *ngFor="let breadChild of breadCrumbData">
+      <li class="bread-text">{{ breadChild.home }}</li>
+      >
+      <li class="bread-text">{{ breadChild.intro }}</li>
+      >
+      <li class="bread-text highlight">{{ breadChild.hero }}</li>
+    </ul>
+  </div>
+</div>
+
+<div class="input-box">
+  <div class="input-and-glass">
+    <input
+      class="input-text"
+      type="text"
+      name="search"
+      autocomplete="off"
+      placeholder="Tìm Tướng"
+    />
+    <i class="fa-solid fa-magnifying-glass input-glass"></i>
+  </div>
+
+  <div class="heroes">
+    <div class="all-hero-box">
+      <span class="all-hero" *ngFor="let allHeroChild of allHeroesTypeData">
+        {{ allHeroChild.all }}
+      </span>
+    </div>
+    <div class="hero-box">
+      <span class="hero" *ngFor="let heroChild of heroesTypeData">
+        {{ heroChild }}
+      </span>
     </div>
   </div>
-  <!-- <div class="list-wrapper-normal">
-    <ul *ngFor="let character of charactersData" class="list-style">
-      <li class="overlay">
-        <img [src]="character.img" class="animation-characters" />
-      </li>
-    </ul>
-  </div> -->
-  <div class="list-wrapper-cut">
-    <ul *ngFor="let character of charactersData" class="list-style">
-      <li class="image-wrapper">
-        <img [src]="character.img" class="current-characters" />
-      </li>
-      <li class="name">{{ character.name }}</li>
-    </ul>
-  </div>
+</div>
+
+<div class="list-wrapper-box">
+  <ul *ngFor="let character of charactersData" class="list-wrapper">
+    <div class="img-box">
+      <img [src]="character.img" class="current-img" />
+    </div>
+    <li class="name">
+      {{ character.name }}
+    </li>
+  </ul>
 </div>

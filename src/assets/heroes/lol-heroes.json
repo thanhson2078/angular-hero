@@ -39,6 +39,26 @@
     {
       "img": "assets/img/Ashe_0.jpg",
       "name": "Ashe"
+    },
+    {
+      "img": "assets/img/AurelionSol_0.jpg",
+      "name": "Aurelion Sol"
+    },
+    {
+      "img": "assets/img/Azir_0.jpg",
+      "name": "Azir"
+    },
+    {
+      "img": "assets/img/Bard_0.jpg",
+      "name": "Bard"
+    },
+    {
+      "img": "assets/img/Belveth_0.jpg",
+      "name": "Bel'Veth"
+    },
+    {
+      "img": "assets/img/Blitzcrank_0.jpg",
+      "name": "Blitzcrank"
     }
   ]
 }
