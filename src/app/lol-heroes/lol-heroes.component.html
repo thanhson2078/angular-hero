@@ -1,7 +1,9 @@
-<div class="navbar">
+<div class="navbar position-sticky d-flex justify-content-center">
   <div class="logo"></div>
-  <div class="nav-info-box" *ngFor="let navChild of navBarData">
-    <a class="nav-info">
+  <div class="nav-info-box d-flex" *ngFor="let navChild of navBarData">
+    <a
+      class="nav-info text-uppercase fw-bold list-unstyled text-decoration-none"
+    >
       {{ navChild }}
     </a>
   </div>
@@ -9,13 +11,16 @@
 
 <div class="background-blur"></div>
 
-<div class="bg-small-border">
-  <div class="background-small">
+<div class="position-relative d-flex justify-content-center">
+  <div class="background-small position-absolute">
     <img src="/assets/img/background-small.jpg" alt="" />
   </div>
-  <div class="border-line"></div>
-  <div class="bg-small-text">
-    <ul class="bread-crumb" *ngFor="let breadChild of breadCrumbData">
+  <div class="border-line position-absolute"></div>
+  <div class="bg-small-text position-absolute">
+    <ul
+      class="bread-crumb text-capitalize d-flex justify-content-center list-unstyled"
+      *ngFor="let breadChild of breadCrumbData"
+    >
       <li class="bread-text">{{ breadChild.home }}</li>
       >
       <li class="bread-text">{{ breadChild.intro }}</li>
@@ -25,39 +30,37 @@
   </div>
 </div>
 
-<div class="input-box">
-  <div class="input-and-glass">
+<div class="input-box d-flex align-items-center">
+  <div class="input-and-glass d-flex align-items-center">
     <input
-      class="input-text"
+      class="input-text fw-bold"
       type="text"
       name="search"
       autocomplete="off"
       placeholder="Tìm Tướng"
     />
-    <i class="fa-solid fa-magnifying-glass input-glass"></i>
+    <i class="fa-solid fa-magnifying-glass input-glass position-absolute"></i>
   </div>
 
-  <div class="heroes">
-    <div class="all-hero-box">
-      <span class="all-hero" *ngFor="let allHeroChild of allHeroesTypeData">
-        {{ allHeroChild.all }}
-      </span>
-    </div>
+  <div class="heroes d-flex">
     <div class="hero-box">
-      <span class="hero" *ngFor="let heroChild of heroesTypeData">
+      <span
+        class="hero fw-bold text-capitalize"
+        *ngFor="let heroChild of heroesTypeData"
+      >
         {{ heroChild }}
       </span>
     </div>
   </div>
 </div>
 
-<div class="list-wrapper-box">
-  <ul *ngFor="let character of charactersData" class="list-wrapper">
-    <div class="img-box">
+<div class="hero-wrapper-box d-flex flex-wrap">
+  <div *ngFor="let character of charactersData" class="hero-wrapper">
+    <div class="img-box position-relative overflow-hidden">
       <img [src]="character.img" class="current-img" />
     </div>
-    <li class="name">
+    <div class="name position-relative">
       {{ character.name }}
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>

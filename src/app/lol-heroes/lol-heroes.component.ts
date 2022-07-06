@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LolHero, ResponseData } from '../interface/lol-heroes.interface';
+import { ResponseData } from '../interface/lol-heroes.interface';
 import { LolHeroesService } from '../services/lol-heroes/lol-heroes.service';
 
 @Component({
@@ -11,26 +11,25 @@ export class LolHeroesComponent implements OnInit {
   charactersData: Array<any> = [];
 
   navBarData = [
-    'TIN TỨC',
-    'GIỚI THIỆU',
-    'ESPORTS',
-    'HỖ TRỢ',
-    'TẢI GAME',
-    'NẠP THẺ',
+    'tin tức',
+    'giới thiệu',
+    'esports',
+    'hỗ trợ',
+    'tải game',
+    'nạp thẻ',
   ];
 
-  breadCrumbData = [{ home: 'Trang Chủ', intro: 'Giới Thiệu', hero: 'Tướng' }];
+  breadCrumbData = [{ home: 'trang chủ', intro: 'giới thiệu', hero: 'tướng' }];
 
   heroesTypeData = [
-    'Xạ Thủ',
-    'Đấu Sĩ',
-    'Đỡ Đòn',
-    'Sát Thủ',
-    'Hỗ Trợ',
-    'Pháp Sư',
+    'tất cả',
+    'xạ thủ',
+    'đấu sĩ',
+    'đỡ đòn',
+    'sát thủ',
+    'hỗ trợ',
+    'pháp sư',
   ];
-
-  allHeroesTypeData = [{ all: 'Tất Cả' }];
 
   constructor(private lolheroesService: LolHeroesService) {}
 
