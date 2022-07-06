@@ -10,14 +10,14 @@
 }
 
 .border-line {
-  bottom: 4.625rem;
+  bottom: 4.65rem;
   border: 1px solid #8a8b86;
   width: 1198px;
   height: 150px;
 }
 
 .bg-small-text {
-  margin-right: 59.375rem;
+  margin-right: 59.35rem;
   bottom: 0.375rem;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .bread-text {
-  margin: 0 0.625rem 0 0.625rem;
+  margin: 0 0.65rem 0 0.65rem;
 }
 
 .highlight {
@@ -46,7 +46,7 @@
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
   color: #ededed;
-  margin: 0 1.125rem 1.125rem 0;
+  margin: 0 1.15rem 1.15rem 0;
   width: 250px;
   height: 315px;
 }
@@ -103,7 +103,7 @@
 }
 
 .nav-info {
-  padding: 0.625rem 3rem 1rem 3rem;
+  padding: 0.65rem 3rem 1rem 3rem;
   color: tan;
   font-size: 1.125rem;
 }
@@ -123,7 +123,7 @@
   background: url("/assets/img/logo.png");
   background-repeat: no-repeat;
   margin-right: 1.25rem;
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.35rem;
 }
 
 .heroes {
@@ -132,7 +132,7 @@
 
 .hero {
   cursor: pointer;
-  margin-right: 1.875rem;
+  margin-right: 1.85rem;
   color: #626262;
   font-size: 1.02395rem;
   padding-bottom: 0.75rem;
@@ -175,7 +175,7 @@
   border: 1px solid #aaa;
   background-size: 100% 50%;
   background-repeat: no-repeat;
-  margin: 1.5rem 6.25rem 0.625rem 6.25rem;
+  margin: 1.5rem 6.25rem 0 6.25rem;
   padding: 0.65rem 0 0.65rem 0;
 }
 
@@ -184,14 +184,14 @@
   position: absolute;
   transform: rotate(45deg);
   height: 25px;
-  margin: 0 0 1.75rem 0.475rem;
+  margin: 0 0 1.75rem 0.45rem;
   border-right: 1px solid #aaa;
 }
 
 .input-and-glass::before {
   content: "";
   position: absolute;
-  margin: 0 0 2.25rem 0.065rem;
+  margin: 0 0 2.25rem 0.06rem;
   transform: rotate(90deg);
   border-right: 25px solid transparent;
   border-bottom: 25px solid white;
@@ -207,7 +207,7 @@
   right: 0;
   transform: rotate(45deg);
   height: 21px;
-  margin: 2.065rem 6.75rem 0 0;
+  margin: 2.06rem 6.75rem 0 0;
   border-right: 1px solid #aaa;
 }
 
