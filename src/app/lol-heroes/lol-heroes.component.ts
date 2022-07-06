@@ -8,7 +8,6 @@ import { LolHeroesService } from '../services/lol-heroes/lol-heroes.service';
   styleUrls: ['./lol-heroes.component.scss'],
 })
 export class LolHeroesComponent implements OnInit {
-<<<<<<< HEAD
   charactersData: Array<any> = [];
 
   navBarData = [
@@ -34,14 +33,7 @@ export class LolHeroesComponent implements OnInit {
   allHeroesTypeData = [{ all: 'Tất Cả' }];
 
   constructor(private lolheroesService: LolHeroesService) {}
-=======
-  
-  charactersData: Array<LolHero> = [];
->>>>>>> a996b1775f4df6b60ee6851f864e50a4294de00d
 
-  constructor(private lolheroesService: LolHeroesService) {
-  }
-  
   ngOnInit(): void {
     this.getCharacters();
   }
