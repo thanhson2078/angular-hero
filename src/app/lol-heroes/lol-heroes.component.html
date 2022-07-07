@@ -9,14 +9,16 @@
   </div>
 </div>
 
-<div class="background-blur"></div>
+<div class="wrapper">
+  <div class="background-blur"></div>
 
-<div class="position-relative d-flex justify-content-center">
-  <div class="background-small position-absolute">
-    <img src="/assets/img/background-small.jpg" alt="" />
+  <div class="d-flex justify-content-center fit-to-center">
+    <div class="background-small fit-to-center">
+      <img src="/assets/img/background-small.jpg" alt="" class="fit-to-center"/>
+    </div>
   </div>
-  <div class="border-line position-absolute"></div>
-  <div class="bg-small-text position-absolute">
+
+  <div class="bg-small-text">
     <ul
       class="bread-crumb text-capitalize d-flex justify-content-center list-unstyled"
       *ngFor="let breadChild of breadCrumbData"
