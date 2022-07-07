@@ -127,7 +127,7 @@
 }
 
 .heroes {
-  margin-left: 16.85rem;
+  // margin-left: 16.85rem;
 }
 
 .hero {
@@ -177,50 +177,56 @@
   background-repeat: no-repeat;
   margin: 1.5rem 6.25rem 0 6.25rem;
   padding: 0.65rem 0 0.65rem 0;
+  position: relative;
 }
 
 .input-box::before {
   content: "";
   position: absolute;
   transform: rotate(45deg);
-  height: 25px;
-  margin: 0 0 1.75rem 0.45rem;
+  height: 12px;
   border-right: 1px solid #aaa;
+  width: 12px;
+  background: white;
+  top: -7px;
+  left: -7px;
 }
 
-.input-and-glass::before {
-  content: "";
-  position: absolute;
-  margin: 0 0 2.25rem 0.06rem;
-  transform: rotate(90deg);
-  border-right: 25px solid transparent;
-  border-bottom: 25px solid white;
-  border-top: 5px solid transparent;
-  border-left: 0px solid transparent;
-  width: 5px;
-  height: 0px;
-}
+// .input-and-glass::before {
+//   content: "";
+//   position: absolute;
+//   margin: 0 0 2.25rem 0.06rem;
+//   transform: rotate(90deg);
+//   border-right: 25px solid transparent;
+//   border-bottom: 25px solid white;
+//   border-top: 5px solid transparent;
+//   border-left: 0px solid transparent;
+//   width: 5px;
+//   height: 0px;
+// }
 
 .input-box::after {
   content: "";
   position: absolute;
-  right: 0;
-  transform: rotate(45deg);
-  height: 21px;
-  margin: 2.06rem 6.75rem 0 0;
+  transform: rotate(225deg);
+  height: 11px;
   border-right: 1px solid #aaa;
+  bottom: -5px;
+  right: -3px;
+  width: 8px;
+  background: white;
 }
 
-.input-and-glass::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  margin: 2.65rem 6.15rem 0 0;
-  transform: rotate(-90deg);
-  border-right: 35px solid transparent;
-  border-bottom: 35px solid white;
-  border-top: 5px solid transparent;
-  border-left: 0px solid transparent;
-  width: 5px;
-  height: 0px;
-}
+// .input-and-glass::after {
+//   content: "";
+//   position: absolute;
+//   right: 0;
+//   margin: 2.65rem 6.15rem 0 0;
+//   transform: rotate(-90deg);
+//   border-right: 35px solid transparent;
+//   border-bottom: 35px solid white;
+//   border-top: 5px solid transparent;
+//   border-left: 0px solid transparent;
+//   width: 5px;
+//   height: 0px;
+// }
