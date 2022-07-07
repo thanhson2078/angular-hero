@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ResponseData } from '../interface/lol-heroes.interface';
+import {
+  ResponseData,
+  NavInfo,
+  BreadCrumbs,
+  HeroesType,
+  LolHero,
+} from '../interface/lol-heroes.interface';
 import { LolHeroesService } from '../services/lol-heroes/lol-heroes.service';
-
-export interface BreadCrumb {
-  url: string;
-  displayText: string;
-}
 
 @Component({
   selector: 'app-lol-heroes',
@@ -13,51 +14,10 @@ export interface BreadCrumb {
   styleUrls: ['./lol-heroes.component.scss'],
 })
 export class LolHeroesComponent implements OnInit {
-  charactersData: Array<any> = [];
-
-  navBarData = [
-    'tin tức',
-    'giới thiệu',
-    'esports',
-    'hỗ trợ',
-    'tải game',
-    'nạp thẻ',
-  ];
-
-  breadCrumbData = [
-    { 
-      home: 'trang chủ', 
-      intro: 'giới thiệu', 
-      hero: 'tướng',
-    }
-  ];
-
-  // breadCrumbs: Array<BreadCrumb> = [
-  //   { 
-  //     displayText: 'trang chủ',
-  //     url: '/',
-  //   },
-  //   { 
-  //     displayText: 'giới thiệu',
-  //     url: '/intro',
-  //   },
-  //   { 
-  //     displayText: 'tướng',
-  //     url: '/heroes',
-  //   }
-  // ];
-
-
-
-  heroesTypeData = [
-    'tất cả',
-    'xạ thủ',
-    'đấu sĩ',
-    'đỡ đòn',
-    'sát thủ',
-    'hỗ trợ',
-    'pháp sư',
-  ];
+  characters: Array<LolHero> = [];
+  navBar: Array<NavInfo> = [];
+  heroesCategories: Array<HeroesType> = [];
+  breadCrumbs: Array<BreadCrumbs> = [];
 
   constructor(private lolheroesService: LolHeroesService) {}
 
@@ -67,7 +27,10 @@ export class LolHeroesComponent implements OnInit {
 
   getCharacters() {
     this.lolheroesService.getLolHeroesData().subscribe((data: ResponseData) => {
-      this.charactersData = data.characters;
+      this.characters = data.characters;
+      this.navBar = data.navBar;
+      this.heroesCategories = data.heroesCategories;
+      this.breadCrumbs = data.breadCrumbs;
     });
   }
 }

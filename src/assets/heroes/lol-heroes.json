@@ -54,11 +54,44 @@
     },
     {
       "img": "assets/img/Belveth_0.jpg",
-      "name": "Bel'Veth"
+      "name": "BelVeth"
     },
     {
       "img": "assets/img/Blitzcrank_0.jpg",
       "name": "Blitzcrank"
+    }
+  ],
+  "navBar": [
+    { "info": "tin tức" },
+    { "info": "giới thiệu" },
+    { "info": "esports" },
+    { "info": "hỗ trợ" },
+    { "info": "tải game" },
+    { "info": "nạp thẻ" }
+  ],
+  "heroesCategories": [
+    { "type": "tất cả" },
+    { "type": "xạ thủ" },
+    { "type": "đấu sĩ" },
+    { "type": "đỡ đòn" },
+    { "type": "sát thủ" },
+    { "type": "hỗ trợ" },
+    { "type": "pháp sư" }
+  ],
+  "breadCrumbs": [
+    {
+      "displayText": "trang chủ ",
+      "arrow": ">",
+      "url": "/"
+    },
+    {
+      "displayText": "giới thiệu ",
+      "arrow": ">",
+      "url": "/intro"
+    },
+    {
+      "displayText": "tướng",
+      "url": "/heroes"
     }
   ]
 }

@@ -1,10 +1,10 @@
 <div class="navbar position-sticky d-flex justify-content-center">
   <div class="logo"></div>
-  <div class="nav-info-box d-flex" *ngFor="let navChild of navBarData">
+  <div class="nav-info-box d-flex" *ngFor="let navChild of navBar">
     <a
       class="nav-info text-uppercase fw-bold list-unstyled text-decoration-none"
     >
-      {{ navChild }}
+      {{ navChild.info }}
     </a>
   </div>
 </div>
@@ -14,20 +14,22 @@
 
   <div class="d-flex justify-content-center fit-to-center">
     <div class="background-small fit-to-center">
-      <img src="/assets/img/background-small.jpg" alt="" class="fit-to-center"/>
+      <img
+        src="/assets/img/background-small.jpg"
+        alt=""
+        class="fit-to-center"
+      />
     </div>
   </div>
 
   <div class="bg-small-text">
     <ul
       class="bread-crumb text-capitalize d-flex justify-content-center list-unstyled"
-      *ngFor="let breadChild of breadCrumbData"
     >
-      <li class="bread-text">{{ breadChild.home }}</li>
-      >
-      <li class="bread-text">{{ breadChild.intro }}</li>
-      >
-      <li class="bread-text highlight">{{ breadChild.hero }}</li>
+      <li class="bread-text" *ngFor="let breadChild of breadCrumbs">
+        {{ breadChild.displayText }}
+        <span class="arrow"> {{ breadChild.arrow }} </span>
+      </li>
     </ul>
   </div>
 </div>
@@ -48,16 +50,16 @@
     <div class="hero-box">
       <span
         class="hero fw-bold text-capitalize"
-        *ngFor="let heroChild of heroesTypeData"
+        *ngFor="let heroChild of heroesCategories"
       >
-        {{ heroChild }}
+        {{ heroChild.type }}
       </span>
     </div>
   </div>
 </div>
 
 <div class="hero-wrapper-box d-flex flex-wrap">
-  <div *ngFor="let character of charactersData" class="hero-wrapper">
+  <div *ngFor="let character of characters" class="hero-wrapper">
     <div class="img-box position-relative overflow-hidden">
       <img [src]="character.img" class="current-img" />
     </div>
