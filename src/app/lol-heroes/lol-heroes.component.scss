@@ -6,8 +6,6 @@
 }
 
 .bg-small-text {
-  // margin-right: 59.35rem;
-  // bottom: 0.375rem;
   left: 6rem;
   bottom: 0;
   position: absolute;
@@ -40,6 +38,7 @@
 .bread-text {
   margin-left: 0.6rem;
 }
+
 .arrow {
   margin-left: 0.4rem;
 }
@@ -48,18 +47,11 @@
   color: #fff;
 }
 
-.hero-wrapper-box {
-  margin-top: 3.75rem;
-  margin-left: 6.25rem;
-}
-
 .hero-wrapper {
   cursor: pointer;
-  font-size: 1.5625rem;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
   color: #ededed;
-  margin: 0 1.15rem 1.15rem 0;
   width: 250px;
   height: 315px;
 }
@@ -159,34 +151,20 @@
   border-bottom: 3px solid #bf975c;
 }
 
-.all-button {
-  color: #bb996b;
-  border-bottom: 3px solid #bb996b;
-}
-
 .input-glass {
   color: #bb996b;
-  font-size: 1.9rem;
-  margin: 0 0 0.35rem 1.85rem;
 }
 
 .input-text {
-  font-size: 1rem;
   color: #626262;
-  width: 150px;
-  margin: 0 0 0 4.35rem;
   border: none;
   border-right: 1px solid #626262;
-  border-top-left-radius: 15px;
 }
 
 .input-box {
   border: 1px solid #aaa;
   background-size: 100% 50%;
   background-repeat: no-repeat;
-  margin: 1.5rem 6.25rem 0 6.25rem;
-  padding: 0.65rem 0 0.65rem 0;
-  position: relative;
 }
 
 .input-box::before {
@@ -201,19 +179,6 @@
   left: -6.5px;
 }
 
-// .input-and-glass::before {
-//   content: "";
-//   position: absolute;
-//   margin: 0 0 2.25rem 0.06rem;
-//   transform: rotate(90deg);
-//   border-right: 25px solid transparent;
-//   border-bottom: 25px solid white;
-//   border-top: 5px solid transparent;
-//   border-left: 0px solid transparent;
-//   width: 5px;
-//   height: 0px;
-// }
-
 .input-box::after {
   content: "";
   position: absolute;
@@ -226,20 +191,6 @@
   background: white;
 }
 
-// .input-and-glass::after {
-//   content: "";
-//   position: absolute;
-//   right: 0;
-//   margin: 2.65rem 6.15rem 0 0;
-//   transform: rotate(-90deg);
-//   border-right: 35px solid transparent;
-//   border-bottom: 35px solid white;
-//   border-top: 5px solid transparent;
-//   border-left: 0px solid transparent;
-//   width: 5px;
-//   height: 0px;
-// }
-
 .wrapper {
   position: relative;
 }
@@ -250,4 +201,30 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+}
+
+.hero-collapse {
+  display: none;
+}
+
+@media only screen and (max-width: 980px) {
+  .input-text, .input-box {
+    width: 100% !important;
+
+    &.input-text {
+      border-right: 0;
+    }
+  }
+  
+  .heroes {
+    width: 0 !important;
+    
+    .hero-box {
+      display: none;
+    }
+  }
+
+  .hero-collapse {
+    display: block;
+  }
 }

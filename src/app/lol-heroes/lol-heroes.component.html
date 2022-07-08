@@ -1,9 +1,7 @@
 <div class="navbar position-sticky d-flex justify-content-center">
   <div class="logo"></div>
   <div class="nav-info-box d-flex" *ngFor="let navChild of navBar">
-    <a
-      class="nav-info text-uppercase fw-bold list-unstyled text-decoration-none"
-    >
+    <a class="nav-info text-uppercase fw-bold list-unstyled text-decoration-none">
       {{ navChild.info }}
     </a>
   </div>
@@ -14,11 +12,7 @@
 
   <div class="d-flex justify-content-center fit-to-center">
     <div class="background-small fit-to-center">
-      <img
-        src="/assets/img/background-small.jpg"
-        alt=""
-        class="fit-to-center"
-      />
+      <img src="/assets/img/background-small.jpg" class="fit-to-center" />
     </div>
   </div>
 
@@ -26,25 +20,23 @@
     <ul
       class="bread-crumb text-capitalize d-flex justify-content-center list-unstyled"
     >
-      <li class="bread-text" *ngFor="let breadChild of breadCrumbs">
+      <li class="me-2" *ngFor="let breadChild of breadCrumbs">
         {{ breadChild.displayText }}
-        <span class="arrow"> {{ breadChild.arrow }} </span>
+        <span class="me-2"> {{ breadChild.arrow }} </span>
       </li>
     </ul>
   </div>
 </div>
 
-<div class="input-box d-flex align-items-center">
-  <div class="input-and-glass d-flex align-items-center">
-    <input
-      class="input-text fw-bold"
-      type="text"
-      name="search"
-      autocomplete="off"
-      placeholder="Tìm Tướng"
-    />
-    <i class="fa-solid fa-magnifying-glass input-glass position-absolute"></i>
-  </div>
+<div class="container d-flex align-items-center mt-4 mb-3 p-3 position-relative input-box">
+  <i lass="fa-solid fa-magnifying-glass input-glass position-absolute fs-2"></i>
+  <input
+    class="input-text fw-bold ps-5"
+    type="text"
+    name="search"
+    autocomplete="off"
+    placeholder="Tìm Tướng"
+  />
 
   <div class="heroes d-flex justify-content-center w-100">
     <div class="hero-box">
@@ -56,10 +48,29 @@
       </span>
     </div>
   </div>
+
+  <div class="hero-collapse">
+    <div class="dropdown">
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        id="dropdownMenuButton1"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<div class="hero-wrapper-box d-flex flex-wrap">
-  <div *ngFor="let character of characters" class="hero-wrapper">
+<div class="d-flex justify-content-center flex-wrap my-4">
+  <div *ngFor="let character of characters" class="hero-wrapper fs-3 m-3">
     <div class="img-box position-relative overflow-hidden">
       <img [src]="character.img" class="current-img" />
     </div>
