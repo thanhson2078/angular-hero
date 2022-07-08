@@ -1,13 +1,45 @@
-<div class="navbar position-sticky d-flex justify-content-center">
-  <div class="logo"></div>
+<div class="navbar position-fixed w-100 d-flex justify-content-center">
+  <img class="logo" src="/assets/img/logo.png" />
   <div class="nav-info-box d-flex" *ngFor="let navChild of navBar">
-    <a class="nav-info text-uppercase fw-bold list-unstyled text-decoration-none">
+    <a
+      class="nav-info text-uppercase fw-bold list-unstyled text-decoration-none"
+    >
       {{ navChild.info }}
     </a>
   </div>
+  <button
+    class="navbar-toggler btn-collapse m-auto mx-0"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNavDarkDropdown"
+    aria-controls="navbarNavDarkDropdown"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="line d-block"></span>
+    <span class="line d-block"></span>
+    <span class="line d-block"></span>
+  </button>
 </div>
 
-<div class="wrapper">
+<div class="collapse navbar-collapse nav-expand" id="navbarNavDarkDropdown">
+  <ul class="navbar-nav">
+    <li class="nav-item dropdown" *ngFor="let navChild of navBar">
+      <a
+        class="nav-link nav-expand-color fw-bold fs-3 text-uppercase"
+        href="#"
+        id="navbarDarkDropdownMenuLink"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        {{ navChild.info }}
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="wrapper-bg-blur">
   <div class="background-blur"></div>
 
   <div class="d-flex justify-content-center fit-to-center">
@@ -22,14 +54,16 @@
     >
       <li class="me-2" *ngFor="let breadChild of breadCrumbs">
         {{ breadChild.displayText }}
-        <span class="me-2"> {{ breadChild.arrow }} </span>
+        <span class="ms-1"> {{ breadChild.arrow }} </span>
       </li>
     </ul>
   </div>
 </div>
 
-<div class="container d-flex align-items-center mt-4 mb-3 p-3 position-relative input-box">
-  <i lass="fa-solid fa-magnifying-glass input-glass position-absolute fs-2"></i>
+<div
+  class="container d-flex align-items-center mt-4 mb-3 p-3 position-relative input-box"
+>
+  <i class="fa-solid fa-magnifying-glass tan-color position-absolute fs-2"></i>
   <input
     class="input-text fw-bold ps-5"
     type="text"
@@ -38,10 +72,10 @@
     placeholder="Tìm Tướng"
   />
 
-  <div class="heroes d-flex justify-content-center w-100">
-    <div class="hero-box">
+  <div class="d-flex justify-content-center w-100">
+    <div class="category-box">
       <span
-        class="hero fw-bold text-capitalize"
+        class="category-detail fw-bold text-capitalize"
         *ngFor="let heroChild of heroesCategories"
       >
         {{ heroChild.type }}
@@ -49,23 +83,24 @@
     </div>
   </div>
 
-  <div class="hero-collapse">
-    <div class="dropdown">
-      <button
-        class="btn btn-outline-secondary"
-        type="button"
-        id="dropdownMenuButton1"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </div>
+  <div class="dropdown categories-btn position-relative">
+    <button
+      class="btn shadow-none d-flex align-items-center"
+      type="button"
+      id="dropdownMenuButton1"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <span class="tan-color fw-bold text-nowrap fs-5 me-5">Tất Cả</span>
+      <img class="caret" src="/assets/img/icon-caret.png" alt="" />
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li *ngFor="let heroChild of heroesCategories">
+        <a class="dropdown-item fs-5 text-capitalize text-secondary" href="#">
+          {{ heroChild.type }}
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
 
