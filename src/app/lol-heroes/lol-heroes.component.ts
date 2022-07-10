@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {
   ResponseData,
-  NavInfo,
   BreadCrumbs,
   HeroesType,
   LolHero,
 } from '../interface/lol-heroes.interface';
+import { Navbar } from '../interface/nav-bar.interface';
 import { LolHeroesService } from '../services/lol-heroes/lol-heroes.service';
 
 @Component({
@@ -15,9 +15,11 @@ import { LolHeroesService } from '../services/lol-heroes/lol-heroes.service';
 })
 export class LolHeroesComponent implements OnInit {
   characters: Array<LolHero> = [];
-  navBar: Array<NavInfo> = [];
+  navbarData: Array<Navbar> = [];
   heroesCategories: Array<HeroesType> = [];
   breadCrumbs: Array<BreadCrumbs> = [];
+
+  isShowingAllHeroTypes = false;
 
   constructor(private lolheroesService: LolHeroesService) {}
 
@@ -28,7 +30,7 @@ export class LolHeroesComponent implements OnInit {
   getCharacters() {
     this.lolheroesService.getLolHeroesData().subscribe((data: ResponseData) => {
       this.characters = data.characters;
-      this.navBar = data.navBar;
+      this.navbarData = data.navBar;
       this.heroesCategories = data.heroesCategories;
       this.breadCrumbs = data.breadCrumbs;
     });

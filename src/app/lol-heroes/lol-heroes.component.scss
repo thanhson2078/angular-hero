@@ -1,31 +1,27 @@
-// feat: fix shaky navbar button when hover on, recreate the dropdown of category box, create a navbar collapse with dropdown when press, arrange css file in order, responsive with media for a bit //
+// những chỗ nào mà padding hay margin hay có giá trị là magic number thì tìm cách remove nó đi. 
+// mang ra ngoài html và sử dụng bằng class của boostrap nếu đc
 
-@media only screen and (max-width: 1224px) {
-  .nav-info {
-    display: none;
-  }
-}
-@media only screen and (min-width: 1224px) {
-  .btn-collapse {
-    display: none;
-  }
-  .nav-expand {
-    display: none;
-  }
-}
+// coi thử chỗ nào có dùng mã màu này thì đổi thành biến
+$light-orange: #bf975c;
+
+// tương tự các màu khác cũng viết ra thành biến rồi sử dụng, 
+// ref: https://sass-lang.com/documentation/variables
 
 .nav-expand-color {
   color: #d2b48c;
 }
 
 .nav-expand {
+  // khúc này mang ra dùng class của bootstrap
   text-align: center;
-  background: #061d25;
   width: 100%;
   position: fixed;
-  top: 4.3rem;
   right: 0;
+  // 
+  
+  top: 4.3rem;
   z-index: 100;
+  background: #061d25;
 }
 
 .btn-collapse {
@@ -151,6 +147,9 @@
   position: absolute;
   transform: rotate(225deg);
   height: 11px;
+  // dùng chung 1 kiểu màu nha, vd màu hex thì là 6 chữ, => #aaa sẽ thành #aaaaaa
+  // cho nó đồng bộ với nhau hết
+  // tương tự fix vs mấy chỗ khác luôn 
   border-right: 1px solid #aaa;
   bottom: -5px;
   right: -3px;
@@ -176,36 +175,40 @@
   color: #ededed;
   width: 250px;
   height: 315px;
-}
 
-.hero-wrapper:hover .img-box::after {
-  background: none;
-}
+  &:hover {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 
-.hero-wrapper:hover .current-img {
-  transform: scale(1);
-}
+    .img-box::after {
+      background: none;
+    }
 
-.hero-wrapper:hover .name {
-  background-color: #006680;
-  padding-left: 2rem;
+    .current-img {
+      transform: scale(1);
+    }
+
+    .name {
+      background-color: #006680;
+      padding-left: 1rem !important;
+    }
+  }
 }
 
 .img-box {
   width: 249px;
   height: 290px;
-}
 
-.img-box::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 11%;
-  padding-top: 11%;
-  background-color: #fff;
-  transform: translate(50%, -50%) rotate(45deg);
-  transition: all 0.5s ease 0s;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 11%;
+    padding-top: 11%;
+    background-color: #fff;
+    transform: translate(50%, -50%) rotate(45deg);
+    transition: all 0.5s ease 0s;
+  }
 }
 
 .current-img {
@@ -217,37 +220,58 @@
   background-color: #061c25;
   width: 249px;
   bottom: 0.8rem;
-  padding: 0.1rem 0.1rem 0.1rem 1.3rem;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 }
 
 .category-detail {
   cursor: pointer;
-  margin-right: 1.85rem;
   color: #626262;
-  font-size: 1.02395rem;
-  padding-bottom: 1.1rem;
-}
 
-.category-detail:first-child {
-  cursor: pointer;
-  color: #bf975c;
-  font-size: 1.02395rem;
-  border-bottom: 3px solid #bf975c;
-}
+  &:first-child {
+    cursor: pointer;
+    color: $light-orange;
+    font-size: 1.02395rem;
+    border-bottom: 3px solid #bf975c;
+  }
 
-.category-detail:hover {
-  color: #bf975c;
-  border-bottom: 3px solid #bf975c;
+  &:hover {
+    color: #bf975c;
+    border-bottom: 3px solid #bf975c;
+  }
 }
 
 .categories-btn {
   display: none;
 }
 
-.categories-btn:active .caret {
+.transition {
+  transition: all 0.5s;
+}
+
+.rotate {
   transform: rotate(180deg);
   transition: all 0.5s;
+}
+
+// tìm hiểu thử có cách nào chỉ dùng max width hoặc chỉ dùng min width cho media thôi 
+// ko nên dùng 2 cái sẽ dễ bị rối
+@media only screen and (max-width: 1224px) {
+  .nav-info {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: space-around !important;
+  }
+}
+
+@media only screen and (min-width: 1224px) {
+  .btn-collapse {
+    display: none;
+  }
+  .nav-expand {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -265,7 +289,7 @@
     display: block;
   }
 
-  .category-box {
-    display: none;
+  .category-box-wrapper {
+    display: none !important;
   }
 }

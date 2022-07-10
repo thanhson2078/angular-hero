@@ -1,6 +1,4 @@
-export interface NavInfo {
-  info: string;
-}
+import { Navbar } from "./nav-bar.interface";
 
 export interface BreadCrumbs {
   displayText: string;
@@ -18,7 +16,7 @@ export interface LolHero {
 }
 
 export interface ResponseData {
-  navBar: Array<NavInfo>;
+  navBar: Array<Navbar>;
   heroesCategories: Array<HeroesType>;
   characters: Array<LolHero>;
   breadCrumbs: Array<BreadCrumbs>;
