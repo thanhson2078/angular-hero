@@ -1,25 +1,34 @@
-<a
-  [routerLink]="['/home']"
-  routerLinkActive="router-link-active"
-  class="routing-item"
->
-  To Home
-</a>
+<div class="center-link">
+  <a
+    [routerLink]="['/home']"
+    routerLinkActive="router-link-active"
+    class="routing-item"
+  >
+    To Home
+  </a>
 
-<a
-  [routerLink]="['/about']"
-  routerLinkActive="router-link-active"
-  class="routing-item"
->
-  To About
-</a>
+  <a
+    [routerLink]="['/about']"
+    routerLinkActive="router-link-active"
+    class="routing-item"
+  >
+    To About
+  </a>
 
-<a
-  [routerLink]="['/heroes']"
-  routerLinkActive="router-link-active"
-  class="routing-item"
->
-  To Heroes
-</a>
+  <a
+    [routerLink]="['/heroes']"
+    routerLinkActive="router-link-active"
+    class="routing-item"
+  >
+    To Heroes
+  </a>
 
+  <a
+    [routerLink]="['/lolheroes']"
+    routerLinkActive="router-link-active"
+    class="routing-item"
+  >
+    To Lol Heroes
+  </a>
+</div>
 <router-outlet></router-outlet>

@@ -10,11 +10,13 @@ export class HomeComponent implements OnInit {
   name = 'Son';
   age;
   assassins = ['Altair', 'Ezio', 'Connor', 'Haytham', 'Edward'];
+
   constructor(private common: CommonService) {
     this.age = common.age;
   }
 
   ngOnInit(): void {}
+
   ageDecrease() {
     this.common.age--;
     this.age = this.common.age;

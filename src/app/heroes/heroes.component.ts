@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroesService } from '../services/heroes.service';
+import { HeroesService } from '../services/heroes/heroes.service';
 
 @Component({
   selector: 'app-heroes',
@@ -17,7 +17,6 @@ export class HeroesComponent implements OnInit {
 
   getHeroes() {
     this.heroesService.getHeroesData().subscribe((data: any) => {
-      console.log('data', data);
       this.heroesData = data.data;
     });
   }

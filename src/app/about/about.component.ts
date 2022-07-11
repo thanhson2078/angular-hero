@@ -8,6 +8,7 @@ import { CommonService } from '../services/common.service';
 })
 export class AboutComponent implements OnInit {
   age;
+
   constructor(private common: CommonService) {
     this.age = this.common.age;
   }

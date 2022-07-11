@@ -1,0 +1,295 @@
+// những chỗ nào mà padding hay margin hay có giá trị là magic number thì tìm cách remove nó đi. 
+// mang ra ngoài html và sử dụng bằng class của boostrap nếu đc
+
+// coi thử chỗ nào có dùng mã màu này thì đổi thành biến
+$light-orange: #bf975c;
+
+// tương tự các màu khác cũng viết ra thành biến rồi sử dụng, 
+// ref: https://sass-lang.com/documentation/variables
+
+.nav-expand-color {
+  color: #d2b48c;
+}
+
+.nav-expand {
+  // khúc này mang ra dùng class của bootstrap
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  right: 0;
+  // 
+  
+  top: 4.3rem;
+  z-index: 100;
+  background: #061d25;
+}
+
+.btn-collapse {
+  width: 50px;
+  height: 50px;
+  background-color: #ccbe91;
+
+  padding-bottom: 0.6rem;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+}
+
+.line {
+  margin-top: 0.4rem;
+  width: 25px;
+  height: 4px;
+  background: #000;
+  border-radius: 21px;
+  transition: all 0.3s ease-in-out;
+}
+
+.logo {
+  cursor: pointer;
+  width: 155px;
+  height: 60px;
+  background-repeat: no-repeat;
+  margin-right: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.navbar {
+  top: 0;
+  z-index: 100;
+  padding: 0;
+  padding-top: 0.25rem;
+  background-color: #101215;
+  align-items: initial;
+}
+
+.nav-info {
+  padding: 1rem 3rem 1rem 3rem;
+  color: tan;
+  font-size: 1.125rem;
+}
+
+.nav-info-box {
+  cursor: pointer;
+}
+
+.nav-info-box:hover {
+  border-bottom: 3px solid #0bc6e3;
+}
+
+.wrapper-bg-blur {
+  position: relative;
+}
+
+.background-blur {
+  height: 310px;
+  background: url("/assets/img/background-blur.jpg") no-repeat;
+  background-size: 100% 100%;
+  filter: blur(5px);
+}
+
+.fit-to-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.background-small {
+  width: 90% !important;
+  height: 75% !important;
+}
+
+.background-small::after {
+  content: "";
+  display: block;
+  height: 147px;
+  width: 97%;
+  background: transparent;
+  border: 1px solid #8a8b86;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg-small-text {
+  left: 6rem;
+  bottom: 0;
+  position: absolute;
+}
+
+.bread-crumb {
+  color: #9c9e9d;
+  font-weight: bold;
+}
+
+.input-box {
+  border: 1px solid #aaa;
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+}
+
+.input-box::before {
+  content: "";
+  position: absolute;
+  transform: rotate(45deg);
+  width: 12px;
+  height: 12px;
+  border-right: 1px solid #aaa;
+  background: white;
+  top: -6.5px;
+  left: -6.5px;
+}
+
+.input-box::after {
+  content: "";
+  position: absolute;
+  transform: rotate(225deg);
+  height: 11px;
+  // dùng chung 1 kiểu màu nha, vd màu hex thì là 6 chữ, => #aaa sẽ thành #aaaaaa
+  // cho nó đồng bộ với nhau hết
+  // tương tự fix vs mấy chỗ khác luôn 
+  border-right: 1px solid #aaa;
+  bottom: -5px;
+  right: -3px;
+  width: 8px;
+  background: white;
+}
+
+.tan-color {
+  color: #bb996b;
+}
+
+.input-text {
+  color: #626262;
+  border: none;
+  outline: none;
+  border-right: 1px solid #626262;
+}
+
+.hero-wrapper {
+  cursor: pointer;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  color: #ededed;
+  width: 250px;
+  height: 315px;
+
+  &:hover {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+
+    .img-box::after {
+      background: none;
+    }
+
+    .current-img {
+      transform: scale(1);
+    }
+
+    .name {
+      background-color: #006680;
+      padding-left: 1rem !important;
+    }
+  }
+}
+
+.img-box {
+  width: 249px;
+  height: 290px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 11%;
+    padding-top: 11%;
+    background-color: #fff;
+    transform: translate(50%, -50%) rotate(45deg);
+    transition: all 0.5s ease 0s;
+  }
+}
+
+.current-img {
+  transform: scale(1.03);
+  transition: 0.3s ease-in-out;
+}
+
+.name {
+  background-color: #061c25;
+  width: 249px;
+  bottom: 0.8rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+}
+
+.category-detail {
+  cursor: pointer;
+  color: #626262;
+
+  &:first-child {
+    cursor: pointer;
+    color: $light-orange;
+    font-size: 1.02395rem;
+    border-bottom: 3px solid #bf975c;
+  }
+
+  &:hover {
+    color: #bf975c;
+    border-bottom: 3px solid #bf975c;
+  }
+}
+
+.categories-btn {
+  display: none;
+}
+
+.transition {
+  transition: all 0.5s;
+}
+
+.rotate {
+  transform: rotate(180deg);
+  transition: all 0.5s;
+}
+
+// tìm hiểu thử có cách nào chỉ dùng max width hoặc chỉ dùng min width cho media thôi 
+// ko nên dùng 2 cái sẽ dễ bị rối
+@media only screen and (max-width: 1224px) {
+  .nav-info {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: space-around !important;
+  }
+}
+
+@media only screen and (min-width: 1224px) {
+  .btn-collapse {
+    display: none;
+  }
+  .nav-expand {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .input-text,
+  .input-box {
+    width: 100% !important;
+
+    &.input-text {
+      border-right: 0;
+      font-size: 1.25rem;
+    }
+  }
+
+  .categories-btn {
+    display: block;
+  }
+
+  .category-box-wrapper {
+    display: none !important;
+  }
+}
