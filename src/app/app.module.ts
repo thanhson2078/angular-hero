@@ -12,7 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {SkinDetailComponent} from './skin-detail/skin-detail.component';
 import {HeroDetailComponent} from './hero-detail/hero-detail.component';
 import {LolHeroesComponent} from './lol-heroes/lol-heroes.component';
-import {MainLayoutComponent} from './layout/main-layout/main-layout.component';
+import {LayoutModule} from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,6 @@ import {MainLayoutComponent} from './layout/main-layout/main-layout.component';
     SkinDetailComponent,
     HeroDetailComponent,
     LolHeroesComponent,
-    MainLayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +29,7 @@ import {MainLayoutComponent} from './layout/main-layout/main-layout.component';
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent],
