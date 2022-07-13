@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BreadCrumbs } from '../interface';
-import { ResponseData } from '../interface/lol-heroes.interface';
-import { Navbar } from '../interface/nav-bar.interface';
-import { LolHeroesService } from '../services/lol-heroes/lol-heroes.service';
+import { BreadCrumbs } from '../../interface';
+import { ResponseData } from '../../interface/lol-heroes.interface';
+import { Navbar } from '../../interface/nav-bar.interface';
+import { LolHeroesService } from '../../services/lol-heroes/lol-heroes.service';
 
 @Component({
   selector: 'app-nav-bar',

@@ -12,7 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { SkinDetailComponent } from './skin-detail/skin-detail.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { LolHeroesComponent } from './lol-heroes/lol-heroes.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     SkinDetailComponent,
     HeroDetailComponent,
     LolHeroesComponent,
-    NavBarComponent,
   ],
   imports: [
     BrowserModule,
