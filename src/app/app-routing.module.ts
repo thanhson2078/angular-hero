@@ -11,7 +11,7 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       { path: '', redirectTo: 'champions', pathMatch: 'full' },
-      { path: 'champions', component: LolHeroesComponent },
+      { path: 'champions', component: LolHeroesComponent     },
       { path: 'champions/:id', component: HeroDetailComponent },
     ],
   },
