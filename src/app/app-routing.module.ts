@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'champions', pathMatch: 'full' },
       { path: 'champions', component: LolHeroesComponent     },
-      { path: 'champions/:id', component: HeroDetailComponent },
+      { path: 'champions/:id', component: HeroDetailComponent    },
     ],
   },
   { path: '**', component: PageNotFoundComponent },
