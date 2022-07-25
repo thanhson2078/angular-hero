@@ -1,12 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Store, select} from '@ngrx/store';
 import {
   ResponseData,
   BreadCrumbs,
   HeroesType,
   LolHero,
 } from '../interface/lol-heroes.interface';
-import { Navbar } from '../interface/nav-bar.interface';
-import { LolHeroesService } from '../services/lol-heroes/lol-heroes.service';
+import {Navbar} from '../interface/nav-bar.interface';
+import {LolHeroesService} from '../services/lol-heroes/lol-heroes.service';
+import {AppState} from '../store/reducer';
+import {getHero} from '../store/hero/hero.action';
+import {selectHeroes} from '../store/hero/hero.selector';
 
 @Component({
   selector: 'app-lol-heroes',
@@ -21,18 +25,19 @@ export class LolHeroesComponent implements OnInit {
 
   isShowingAllHeroTypes = false;
 
-  constructor(private lolheroesService: LolHeroesService) {}
+  heroes$ = this.store.pipe(select(selectHeroes));
 
-  ngOnInit(): void {
-    this.getCharacters();
+  constructor(
+    private lolheroesService: LolHeroesService,
+    private store: Store<AppState>
+  ) {
   }
 
-  getCharacters() {
-    this.lolheroesService.getLolHeroesData().subscribe((data: ResponseData) => {
-      this.characters = data.characters;
-      this.navbarData = data.navBar;
-      this.heroesCategories = data.heroesCategories;
-      this.breadCrumbs = data.breadCrumbs;
-    });
+  ngOnInit(): void {
+    this.getHero();
+  }
+
+  getHero() {
+      this.store.dispatch(getHero());
   }
 }
