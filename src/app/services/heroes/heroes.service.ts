@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class HeroesService {
   constructor(private http: HttpClient) {}
 
-  getHeroesData() {
-    return this.http.get('./assets/heroes/heroes.json');
+  getHeroesData(): Observable<any> {
+    return this.http.get('./assets/heroes/lol-heroes.json');
   }
 }
