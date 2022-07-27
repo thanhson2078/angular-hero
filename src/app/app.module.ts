@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SkinDetailComponent } from './skin-detail/skin-detail.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { LolHeroesComponent } from './lol-heroes/lol-heroes.component';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LolHeroesComponent } from './lol-heroes/lol-heroes.component';
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent],
