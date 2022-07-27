@@ -11,7 +11,7 @@ export class DestroyableComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.componentDestroyed$.next();
+    this.componentDestroyed$.next(true);
     this.componentDestroyed$.complete();
   }
 
