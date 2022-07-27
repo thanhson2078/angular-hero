@@ -1,5 +1,3 @@
-<button class='btn btn-primary'>Rdd</button>
-
 <div
   class="container d-flex align-items-center mt-4 mb-3 p-3 position-relative input-box"
 >
@@ -49,7 +47,7 @@
 </div>
 
 <div class="d-flex justify-content-center flex-wrap my-4">
-  <div *ngFor="let character of characters" class="hero-wrapper fs-3 m-4" routerLink="./{{ character.name }}">
+  <div *ngFor="let character of heroes$ | async" class="hero-wrapper fs-3 m-4" routerLink="./{{ character.name }}">
     <div class="img-box position-relative overflow-hidden">
       <img [src]="character.img" class="current-img" />
     </div>

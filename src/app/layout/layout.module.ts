@@ -7,5 +7,8 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [MainLayoutComponent, NavBarComponent],
   imports: [CommonModule, RouterModule],
+  exports:[
+    MainLayoutComponent
+  ]
 })
 export class LayoutModule {}
