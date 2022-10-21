@@ -1,16 +1,158 @@
 .container-fluid {
-  padding-top: 80px;
+  padding: 72px 40px;
+}
+.filter-section {
+  margin: 2rem 0;
 }
 
 .badge {
-  background: rgba(255, 61, 0, 0.1);
-  border: 1px solid #ff3d00;
   border-radius: 4px;
+  font-size: 14px;
 }
 
+.badge-uncomplete {
+  background: rgba(255, 61, 0, 0.1);
+  border: 1px solid var(--color-red);
+  .status {
+    color: var(--color-red);
+  }
+}
+
+.badge-low-risk {
+  background: var(--color-light-green);
+  border: 1px solid var(--color-green);
+  .status {
+    color: var(--color-green);
+  }
+}
+
+.badge-needs-review {
+  background: #ececed;
+  border: 1px solid var(--color-light-grey);
+  .status {
+    color: var(--color-light-grey);
+  }
+}
 .dot {
   height: 12px;
   width: 12px;
   border-radius: 50%;
-  background-color: #ff3d00;
+}
+
+.dot-uncomplete {
+  background-color: var(--color-red);
+}
+
+.dot-low-risk {
+  background-color: var(--color-green);
+}
+
+.dot-needs-review {
+  background-color: var(--color-light-grey);
+}
+
+.text-red {
+  color: var(--color-red);
+}
+
+.text-light-grey {
+  color: var(--color-light-grey);
+}
+
+.submissions-title {
+  font-weight: 700;
+  font-size: 32px;
+  color: #060c1b;
+  margin-top: 2rem;
+}
+
+.input-group-text {
+  border: 1px solid var(--color-light-grey);
+  border-right: none;
+  background-color: var(--color-white);
+}
+
+.search-input {
+  border-left: none;
+}
+
+.export-text {
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.btn-check:checked + .btn,
+.btn-check:active + .btn,
+.btn:active,
+.btn:hover,
+.btn.active,
+.btn.show {
+  color: var(--color-white);
+}
+
+::placeholder {
+  color: var(--color-light-grey);
+}
+
+.btn-group {
+  height: 52px;
+  width: 160px;
+}
+
+input,
+select {
+  height: 48px;
+  outline: none;
+  border: 1px solid var(--color-light-grey);
+  border-radius: 4px;
+  background-color: var(--color-white);
+  box-shadow: none;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+    border-color: var(--color-light-grey);
+    box-shadow: none;
+  }
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.card {
+  margin-bottom: 10px;
+  z-index: 1;
+  background: var(--color-white);
+  border: 1px solid var(--color-light-grey);
+
+  .card-text p {
+    margin-bottom: 0.5rem;
+  }
+  .card-text p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: #060c1b;
+}
+
+.label-select {
+  border: 2px solid #b8b9bc;
+  font-weight: 400;
+  font-size: 16px;
+  color: #060c1b;
+
+  &:first-child {
+    border-right: none;
+  }
+  &:last-child {
+    border-left: none;
+  }
 }

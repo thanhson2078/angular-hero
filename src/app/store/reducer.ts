@@ -1,19 +1,20 @@
 import {ActionReducerMap, Action} from '@ngrx/store';
 import {InjectionToken} from '@angular/core';
 
-import * as fromHero from './hero/hero.reducer';
 import {routerReducer, RouterReducerState} from '@ngrx/router-store';
+
+import * as fromSubmissions from './submissions/submissions.reducer';
 
 export interface AppState {
   router: RouterReducerState;
-  heroes: fromHero.HeroState
+  submissions: fromSubmissions.SubmissionsState
 
 }
 
 export const ROOT_REDUCERS = new InjectionToken<ActionReducerMap<AppState, Action>>('Root reducers token', {
   factory: () => ({
     router: routerReducer,
-    heroes: fromHero.heroesReducer
+    submissions: fromSubmissions.submissionsReducer
   }),
 });
 

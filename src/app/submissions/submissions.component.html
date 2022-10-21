@@ -1,44 +1,139 @@
-<div class="container-fluid px-5">
-  <h1>Submissions</h1>
+<div class="container-fluid">
+  <div class="submissions-title">Submissions</div>
 
   <div class="filter-section">
-    <form class="row g-3">
-      <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Email</label>
-        <input type="email" class="form-control" id="inputEmail4" />
+    <form class="row g-4 align-items-center">
+      <div class="col col-md-3">
+        <div class="input-group">
+          <img
+            class="input-group-text"
+            id="search"
+            src="/assets/icons/search.svg"
+          />
+          <input
+            type="text"
+            class="form-control search-input"
+            placeholder="Search..."
+            aria-label="search"
+            aria-describedby="search"
+          />
+        </div>
       </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Password</label>
-        <input type="password" class="form-control" id="inputPassword4" />
+      <div class="col col-md-2">
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Select Form</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="col col-md-2">
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Select Status</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="col col-md-2">
+        <input type="date" class="form-control" />
+      </div>
+      <div class="col col-md-3">
+        <div class="d-flex justify-content-end align-items-center">
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Basic radio toggle button group"
+          >
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="map"
+              autocomplete="off"
+              checked
+            />
+            <label
+              class="btn btn-outline-primary d-flex align-items-center justify-content-center label-select"
+              for="map"
+              >Map</label
+            >
+
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="list"
+              autocomplete="off"
+            />
+            <label
+              class="btn btn-outline-primary d-flex align-items-center justify-content-center label-select"
+              for="list"
+              >List</label
+            >
+          </div>
+          <div
+            class="d-flex justify-content-start align-items-center cursor-pointer ms-4"
+          >
+            <img src="/assets/icons/export.svg" />
+            <div class="export-text ms-2">Export</div>
+          </div>
+        </div>
       </div>
     </form>
   </div>
 
   <div class="locations-wrapper mt-5">
-    <div class="card" style="width: 459px;">
-      <div class="card-body">
-        <h5 class="card-title d-flex justify-content-between fw-bold">
-          <span>Work Flow: Requires Location</span>
-          <span class="badge text-danger d-flex gap-2 fw-normal">
-            <div class="dot"></div>
-            Uncomplete
-          </span>
-        </h5>
-        <div class="card-text">
-          <p>
-            <span class="me-2 text-secondary">From:</span>
-            <span>denisgordiyenya@gmail.com</span>
-          </p>
-          <p>
-            <span class="me-2 text-secondary">To:</span>
-            <span>denisgordiyenya@gmail.com</span>
-          </p>
-          <p>
-            <span class="me-2 text-secondary">Due Date:</span>
-            <span class="text-danger">06 December</span>
-          </p>
+    <ng-container *ngIf="submissions$ | async">
+      <ng-container *ngFor="let item of submissions$ | async">
+        <div class="card" style="width: 459px">
+          <div class="card-body">
+            <div
+              class="card-title d-flex justify-content-between align-items-center fw-bold"
+            >
+              <span>Work Flow: {{ item?.workFlow }}</span>
+              <div
+                class="badge d-flex gap-2 fw-normal"
+                [ngClass]="{
+                  'badge-uncomplete':
+                    item?.status === SubmissionsStatusEnum.UNCOMPLETE,
+                  'badge-low-risk':
+                    item?.status === SubmissionsStatusEnum.LOW_RISK,
+                  'badge-needs-review':
+                    item?.status === SubmissionsStatusEnum.NEEDS_REVIEWS
+                }"
+              >
+                <div
+                  class="dot"
+                  [ngClass]="{
+                    'dot-uncomplete':
+                      item?.status === SubmissionsStatusEnum.UNCOMPLETE,
+                    'dot-low-risk':
+                      item?.status === SubmissionsStatusEnum.LOW_RISK,
+                    'dot-needs-review':
+                      item?.status === SubmissionsStatusEnum.NEEDS_REVIEWS
+                  }"
+                ></div>
+                <div class='status'>{{ item?.status }}</div>
+              </div>
+            </div>
+            <div class="card-text">
+              <p>
+                <span class="me-2 text-light-grey">From:</span>
+                <span> {{ item?.from }}</span>
+              </p>
+              <p>
+                <span class="me-2 text-light-grey">To:</span>
+                <span> {{ item?.to }}</span>
+              </p>
+              <p>
+                <span class="me-2 text-light-grey">Due Date:</span>
+                <span class="text-red fw-bold"> {{ item?.dueDate | date: "dd MMMM"}}</span>
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </ng-container>
+    </ng-container>
   </div>
 </div>

@@ -1,16 +1,17 @@
 <div
-  class="navbar navbar-dark bg-primary position-fixed w-100 d-flex justify-content-between px-5 py-0"
+  class="navbar navbar-dark bg-primary position-fixed w-100 d-flex justify-content-between py-0"
 >
   <a class="navbar-brand" href="#">ZenduForms</a>
 
   <div class="navbar-inner-center d-flex">
     <div class="nav-info-box d-flex" *ngFor="let item of navbarItems">
       <a
-        routerLink="/{{ item.title }}" routerLinkActive="active"
+        routerLink="/{{ item.title }}"
+        routerLinkActive="active"
         class="nav-info text-white text-capitalize list-unstyled text-decoration-none d-flex align-items-center gap-2 px-3"
       >
         <img class="item-icon" [src]="item.icon" />
-        <span>{{ item.title }}</span>
+        <span class="title">{{ item.title }}</span>
       </a>
     </div>
   </div>
