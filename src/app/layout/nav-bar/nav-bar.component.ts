@@ -8,24 +8,24 @@ import { LolHeroesService } from '../../services/lol-heroes/lol-heroes.service';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-  navbarData: Array<Navbar> = [];
-  breadCrumbs: Array<BreadCrumbs> = [];
-  isShowingLolBanner = true;
+  navbarItems: Array<Navbar> = [
+    { title: 'forms', icon: 'assets/icons/forms.svg' },
+    { title: 'customers', icon: 'assets/icons/forms.svg' },
+    { title: 'submissions', icon: 'assets/icons/forms.svg' },
+    { title: 'history', icon: 'assets/icons/forms.svg' },
+    { title: 'reports', icon: 'assets/icons/forms.svg' },
+    { title: 'workflow', icon: 'assets/icons/forms.svg' },
+  ];
 
-  constructor(private lolheroesService: LolHeroesService, private route: ActivatedRoute) {
-  }
-  
-  ngOnInit(): void {
-    
-  }
+  navBarActions: Array<Navbar> = [
+    { icon: 'assets/icons/noti.svg' },
+    { icon: 'assets/icons/logout.svg' },
+  ];
 
-  getCharacters() {
-    this.lolheroesService.getLolHeroesData().subscribe((data: ResponseData) => {
-      this.navbarData = data.navBar;
-      this.breadCrumbs = data.breadCrumbs;
-    });
-  }
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit(): void {}
 }

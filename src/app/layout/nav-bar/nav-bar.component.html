@@ -1,66 +1,27 @@
-<div class="navbar position-fixed w-100 d-flex justify-content-center">
-  <img class="logo" src="/assets/img/logo.png" />
-  <div class="nav-info-box d-flex" *ngFor="let item of navbarData">
-    <a
-      class="nav-info text-uppercase fw-bold list-unstyled text-decoration-none"
-    >
-      {{ item.info }}
-    </a>
-  </div>
-  <button
-    class="navbar-toggler btn-collapse m-auto mx-0"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#navbarNavDarkDropdown"
-    aria-controls="navbarNavDarkDropdown"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="line d-block"></span>
-    <span class="line d-block"></span>
-    <span class="line d-block"></span>
-  </button>
-</div>
-
 <div
-  class="collapse navbar-collapse text-center w-100 position-fixed nav-expand"
-  id="navbarNavDarkDropdown"
+  class="navbar navbar-dark bg-primary position-fixed w-100 d-flex justify-content-between px-5 py-0"
 >
-  <ul class="navbar-nav">
-    <li class="nav-item dropdown" *ngFor="let item of navbarData">
+  <a class="navbar-brand" href="#">ZenduForms</a>
+
+  <div class="navbar-inner-center d-flex">
+    <div class="nav-info-box d-flex" *ngFor="let item of navbarItems">
       <a
-        class="nav-link nav-expand-color fw-bold fs-3 text-uppercase"
-        href="#"
-        id="navbarDarkDropdownMenuLink"
-        role="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
+        routerLink="/{{ item.title }}" routerLinkActive="active"
+        class="nav-info text-white text-capitalize list-unstyled text-decoration-none d-flex align-items-center gap-2 px-3"
       >
-        {{ item.info }}
+        <img class="item-icon" [src]="item.icon" />
+        <span>{{ item.title }}</span>
       </a>
-    </li>
-  </ul>
-</div>
-
-<div class="wrapper-bg-blur">
-  <ng-container *ngIf="isShowingLolBanner">
-    <div class="background-blur"></div>
-
-    <div class="d-flex justify-content-center fit-to-center">
-      <div class="background-small fit-to-center">
-        <img src="/assets/img/background-small.jpg" class="fit-to-center" />
-      </div>
     </div>
-  </ng-container>
+  </div>
 
-  <div class="bg-small-text">
-    <ul
-      class="bread-crumb text-capitalize d-flex justify-content-center list-unstyled"
-    >
-      <li class="me-2" *ngFor="let breadChild of breadCrumbs">
-        {{ breadChild.displayText }}
-        <span class="ms-1"> {{ breadChild.arrow }} </span>
-      </li>
-    </ul>
+  <div class="navbar-inner-end d-flex gap-3">
+    <div class="nav-info-box d-flex" *ngFor="let item of navBarActions">
+      <a
+        class="nav-info text-white text-capitalize list-unstyled text-decoration-none"
+      >
+        <img [src]="item.icon" />
+      </a>
+    </div>
   </div>
 </div>

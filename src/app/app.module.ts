@@ -11,8 +11,6 @@ import {MatButtonModule} from '@angular/material/button';
 import {HttpClientModule} from '@angular/common/http';
 
 import {SkinDetailComponent} from './skin-detail/skin-detail.component';
-import {HeroDetailComponent} from './hero-detail/hero-detail.component';
-import {LolHeroesComponent} from './lol-heroes/lol-heroes.component';
 import {LayoutModule} from './layout/layout.module';
 
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
@@ -21,6 +19,7 @@ import {StoreModule, ActionReducer, MetaReducer} from '@ngrx/store';
 import {ROOT_REDUCERS} from './store/reducer';
 import {HeroEffects} from './store/hero/hero.effect';
 import { EffectsModule } from '@ngrx/effects';
+import { SubmissionsComponent } from './submissions/submissions.component';
 
 // console.log all actions
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
@@ -39,8 +38,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     AppComponent,
     PageNotFoundComponent,
     SkinDetailComponent,
-    HeroDetailComponent,
-    LolHeroesComponent,
+    SubmissionsComponent,
   ],
   imports: [
     BrowserModule,

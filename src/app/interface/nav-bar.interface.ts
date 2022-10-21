@@ -1,3 +1,4 @@
 export interface Navbar {
-  info: string;
+  title?: string;
+  icon?: string;
 }
