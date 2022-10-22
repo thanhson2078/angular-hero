@@ -8,7 +8,6 @@ import * as fromSubmissions from './submissions/submissions.reducer';
 export interface AppState {
   router: RouterReducerState;
   submissions: fromSubmissions.SubmissionsState
-
 }
 
 export const ROOT_REDUCERS = new InjectionToken<ActionReducerMap<AppState, Action>>('Root reducers token', {

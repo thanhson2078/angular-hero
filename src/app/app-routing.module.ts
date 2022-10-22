@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '',
     component: MainLayoutComponent,
     children: [
-      { path: '', redirectTo: 'map', pathMatch: 'full' },
+      { path: '', redirectTo: 'submissions', pathMatch: 'full' },
       { path: 'submissions', component: SubmissionsComponent },
     ],
   },

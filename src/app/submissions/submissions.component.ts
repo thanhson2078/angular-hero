@@ -1,20 +1,19 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 import { select, Store } from '@ngrx/store';
+import H from '@here/maps-api-for-javascript';
 
-import { SubmissionsStatusEnum } from '../enum/submissions.enum';
 import { AppState } from '../store/reducer';
 import { getSubmissions } from '../store/submissions/submissions.action';
 import { selectSubmissions } from '../store/submissions/submissions.selector';
-
-import H from '@here/maps-api-for-javascript';
+import { SubmissionsStatusEnum } from '../enum/submissions.enum';
 
 @Component({
   selector: 'app-submissions',
   templateUrl: './submissions.component.html',
   styleUrls: ['./submissions.component.scss'],
 })
-export class SubmissionsComponent implements OnInit {
+export class SubmissionsComponent implements AfterViewInit {
   submissions$ = this.store.pipe(select(selectSubmissions));
   SubmissionsStatusEnum = SubmissionsStatusEnum;
 
@@ -25,8 +24,6 @@ export class SubmissionsComponent implements OnInit {
   constructor(private store: Store<AppState>) {
     this.store.dispatch(getSubmissions());
   }
-
-  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     if (!this.map && this.mapDiv) {
