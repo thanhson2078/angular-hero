@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Navbar } from '../../interface/nav-bar.interface';
 
@@ -7,7 +7,7 @@ import { Navbar } from '../../interface/nav-bar.interface';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss'],
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent {
 
   navbarItems: Array<Navbar> = [
     { title: 'forms', icon: 'assets/icons/forms.svg' },
@@ -22,8 +22,4 @@ export class NavBarComponent implements OnInit {
     { icon: 'assets/icons/noti.svg' },
     { icon: 'assets/icons/logout.svg' },
   ];
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }
