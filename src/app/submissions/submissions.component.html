@@ -1,8 +1,8 @@
 <div class="container-fluid">
-  <div class="submissions-title">Submissions</div>
+  <div class="text fs-2 fw-bold mt-4">Submissions</div>
 
   <div class="filter-section">
-    <form class="row g-4 align-items-center">
+    <form class="row align-items-center">
       <div class="col col-md-3">
         <div class="input-group">
           <img
@@ -12,15 +12,13 @@
           />
           <input
             type="text"
-            class="form-control search-input"
+            class="form-control border-start-0 ps-0"
             placeholder="Search..."
-            aria-label="search"
-            aria-describedby="search"
           />
         </div>
       </div>
       <div class="col col-md-2">
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select">
           <option selected>Select Form</option>
           <option value="1">One</option>
           <option value="2">Two</option>
@@ -28,7 +26,7 @@
         </select>
       </div>
       <div class="col col-md-2">
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select">
           <option selected>Select Status</option>
           <option value="1">One</option>
           <option value="2">Two</option>
@@ -36,25 +34,37 @@
         </select>
       </div>
       <div class="col col-md-2">
-        <input type="date" class="form-control" />
+        <div class="datepicker-wrapper absolute">
+          <input
+            type="text"
+            class="form-control datepicker"
+            placeholder="Select date"
+            value="{{ date_picker.value | date: 'dd/MM/yyyy' }}"
+          />
+          <span class="datepicker-toggle">
+            <span class="datepicker-toggle-button"></span>
+            <input
+              type="date"
+              class="datepicker-input"
+              #date_picker
+              (change)="onDateSelect(date_picker.value)"
+            />
+          </span>
+        </div>
       </div>
       <div class="col col-md-3">
         <div class="d-flex justify-content-end align-items-center">
-          <div
-            class="btn-group"
-            role="group"
-            aria-label="Basic radio toggle button group"
-          >
+          <div class="btn-group" role="group">
             <input
               type="radio"
               class="btn-check"
-              name="btnradio"
+              name="map-list-toggle"
               id="map"
               autocomplete="off"
               checked
             />
             <label
-              class="btn btn-outline-primary d-flex align-items-center justify-content-center label-select"
+              class="btn btn-outline-primary d-flex align-items-center justify-content-center text fs-5"
               for="map"
               >Map</label
             >
@@ -62,78 +72,86 @@
             <input
               type="radio"
               class="btn-check"
-              name="btnradio"
+              name="map-list-toggle"
               id="list"
               autocomplete="off"
             />
             <label
-              class="btn btn-outline-primary d-flex align-items-center justify-content-center label-select"
+              class="btn btn-outline-primary d-flex align-items-center justify-content-center text fs-5"
               for="list"
               >List</label
             >
           </div>
           <div
-            class="d-flex justify-content-start align-items-center cursor-pointer ms-4"
+            class="d-flex justify-content-start align-items-center ms-4"
           >
-            <img src="/assets/icons/export.svg" />
-            <div class="export-text ms-2">Export</div>
+            <button class="btn btn-link d-flex gap-1 text-decoration-none text-primary">
+              <img src="/assets/icons/export.svg" />
+              <span class="text-primary"> Export </span>
+            </button>
           </div>
         </div>
       </div>
     </form>
   </div>
 
-  <div class="locations-wrapper mt-5">
-    <ng-container *ngIf="submissions$ | async">
-      <ng-container *ngFor="let item of submissions$ | async">
-        <div class="card" style="width: 459px">
-          <div class="card-body">
-            <div
-              class="card-title d-flex justify-content-between align-items-center fw-bold"
-            >
-              <span>Work Flow: {{ item?.workFlow }}</span>
+  <div class="locations-wrapper d-flex gap-4">
+    <div>
+      <ng-container *ngIf="submissions$ | async as submissions">
+        <ng-container *ngFor="let item of submissions">
+          <div class="card status-card" >
+            <div class="card-body">
               <div
-                class="badge d-flex gap-2 fw-normal"
-                [ngClass]="{
-                  'badge-uncomplete':
-                    item?.status === SubmissionsStatusEnum.UNCOMPLETE,
-                  'badge-low-risk':
-                    item?.status === SubmissionsStatusEnum.LOW_RISK,
-                  'badge-needs-review':
-                    item?.status === SubmissionsStatusEnum.NEEDS_REVIEWS
-                }"
+                class="fw-bold text fs-5 d-flex justify-content-between align-items-center mb-2"
               >
+                <span>Work Flow: {{ item?.workFlow }}</span>
                 <div
-                  class="dot"
+                  class="badge d-flex gap-2 fw-normal"
                   [ngClass]="{
-                    'dot-uncomplete':
+                    'badge-uncomplete':
                       item?.status === SubmissionsStatusEnum.UNCOMPLETE,
-                    'dot-low-risk':
+                    'badge-low-risk':
                       item?.status === SubmissionsStatusEnum.LOW_RISK,
-                    'dot-needs-review':
+                    'badge-needs-review':
                       item?.status === SubmissionsStatusEnum.NEEDS_REVIEWS
                   }"
-                ></div>
-                <div class='status'>{{ item?.status }}</div>
+                >
+                  <div
+                    class="dot"
+                    [ngClass]="{
+                      'bg-danger':
+                        item?.status === SubmissionsStatusEnum.UNCOMPLETE,
+                      'bg-success':
+                        item?.status === SubmissionsStatusEnum.LOW_RISK,
+                      'bg-secondary':
+                        item?.status === SubmissionsStatusEnum.NEEDS_REVIEWS
+                    }"
+                  ></div>
+                  <div class="status">{{ item?.status }}</div>
+                </div>
+              </div>
+              <div class="card-text">
+                <p>
+                  <span class="me-2 text-secondary">From:</span>
+                  <span> {{ item?.from }}</span>
+                </p>
+                <p>
+                  <span class="me-2 text-secondary">To:</span>
+                  <span> {{ item?.to }}</span>
+                </p>
+                <p>
+                  <span class="me-2 text-secondary">Due Date:</span>
+                  <span class="text-danger fw-bold">
+                    {{ item?.dueDate | date: "dd MMMM" }}</span
+                  >
+                </p>
               </div>
             </div>
-            <div class="card-text">
-              <p>
-                <span class="me-2 text-light-grey">From:</span>
-                <span> {{ item?.from }}</span>
-              </p>
-              <p>
-                <span class="me-2 text-light-grey">To:</span>
-                <span> {{ item?.to }}</span>
-              </p>
-              <p>
-                <span class="me-2 text-light-grey">Due Date:</span>
-                <span class="text-red fw-bold"> {{ item?.dueDate | date: "dd MMMM"}}</span>
-              </p>
-            </div>
           </div>
-        </div>
+        </ng-container>
       </ng-container>
-    </ng-container>
+    </div>
+
+    <div #map id="map"></div>
   </div>
 </div>

@@ -1,84 +1,61 @@
+$border-solid: 1px solid;
+
 .container-fluid {
   padding: 72px 40px;
 }
+
 .filter-section {
-  margin: 2rem 0;
+  margin: 1.25rem 0;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.btn-group {
+  height: 48px;
+  width: 160px;
 }
 
 .badge {
   border-radius: 4px;
   font-size: 14px;
-}
 
-.badge-uncomplete {
-  background: rgba(255, 61, 0, 0.1);
-  border: 1px solid var(--color-red);
-  .status {
-    color: var(--color-red);
+  &.badge-uncomplete {
+    background: rgba(255, 61, 0, 0.1);
+    border: $border-solid var(--color-red);
+    .status {
+      color: var(--color-red);
+    }
   }
-}
 
-.badge-low-risk {
-  background: var(--color-light-green);
-  border: 1px solid var(--color-green);
-  .status {
-    color: var(--color-green);
+  &.badge-low-risk {
+    background: var(--color-light-green);
+    border: $border-solid var(--color-green);
+    .status {
+      color: var(--color-green);
+    }
   }
-}
 
-.badge-needs-review {
-  background: #ececed;
-  border: 1px solid var(--color-light-grey);
-  .status {
-    color: var(--color-light-grey);
+  &.badge-needs-review {
+    background: #ececed;
+    border: $border-solid var(--color-light-grey);
+    .status {
+      color: var(--color-light-grey);
+    }
   }
-}
-.dot {
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-}
 
-.dot-uncomplete {
-  background-color: var(--color-red);
-}
-
-.dot-low-risk {
-  background-color: var(--color-green);
-}
-
-.dot-needs-review {
-  background-color: var(--color-light-grey);
-}
-
-.text-red {
-  color: var(--color-red);
-}
-
-.text-light-grey {
-  color: var(--color-light-grey);
-}
-
-.submissions-title {
-  font-weight: 700;
-  font-size: 32px;
-  color: #060c1b;
-  margin-top: 2rem;
+  .dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+  }
 }
 
 .input-group-text {
-  border: 1px solid var(--color-light-grey);
   border-right: none;
+  border: $border-solid var(--color-light-grey);
   background-color: var(--color-white);
-}
-
-.search-input {
-  border-left: none;
-}
-
-.export-text {
-  font-weight: 500;
-  color: var(--color-primary);
 }
 
 .btn-check:checked + .btn,
@@ -94,16 +71,11 @@
   color: var(--color-light-grey);
 }
 
-.btn-group {
-  height: 52px;
-  width: 160px;
-}
-
 input,
 select {
   height: 48px;
   outline: none;
-  border: 1px solid var(--color-light-grey);
+  border: $border-solid var(--color-light-grey);
   border-radius: 4px;
   background-color: var(--color-white);
   box-shadow: none;
@@ -115,38 +87,22 @@ select {
   }
 }
 
-.form-control:focus {
-  box-shadow: none;
-}
-
-.cursor-pointer {
-  cursor: pointer;
-}
-
 .card {
   margin-bottom: 10px;
-  z-index: 1;
   background: var(--color-white);
-  border: 1px solid var(--color-light-grey);
+  border: $border-solid var(--color-light-grey);
+  width: 459px;
 
   .card-text p {
     margin-bottom: 0.5rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
-  .card-text p:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.card-title {
-  font-weight: 700;
-  font-size: 18px;
-  color: #060c1b;
 }
 
 .label-select {
-  border: 2px solid #b8b9bc;
-  font-weight: 400;
-  font-size: 16px;
+  border: $border-solid #b8b9bc;
   color: #060c1b;
 
   &:first-child {
@@ -155,4 +111,58 @@ select {
   &:last-child {
     border-left: none;
   }
+}
+
+.datepicker-wrapper {
+  .datepicker-toggle {
+    display: inline-block;
+    position: relative;
+    width: 18px;
+    height: 20px;
+    top: 0px;
+  }
+
+  .datepicker-toggle-button {
+    position: absolute;
+    left: 14px;
+    top: -21px;
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/icons/calendar.svg");
+    background-repeat: no-repeat;
+  }
+
+  .datepicker-input {
+    position: relative;
+    left: 0;
+    top: -10px;
+    width: 40px;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  .datepicker-input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .datepicker {
+    position: relative;
+    top: 13px;
+    padding-left: 40px;
+  }
+}
+
+#map {
+  width: 100%;
+  height: 623px;
+  margin-right: -2.5rem;
 }

@@ -8,6 +8,7 @@ import { Navbar } from '../../interface/nav-bar.interface';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
+
   navbarItems: Array<Navbar> = [
     { title: 'forms', icon: 'assets/icons/forms.svg' },
     { title: 'customers', icon: 'assets/icons/customers.svg' },
